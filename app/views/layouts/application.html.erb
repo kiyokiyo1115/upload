@@ -1,14 +1,33 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Sample</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Blog</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container-fluid">
+　<header>
+    <ul>
+      <li><a href="/">ホーム</a></li>
+      <li><a href="/blogs/new">新規作成</a></li>
+      <li><a href="/blogs">ブログ一覧</a></li>
+    </ul>
+  </header>
+  
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  
+ 
 
-  <body>
-    <%= yield %>
-  </body>
+
+<%= yield %>
+
+
+  <footer>
+    <p>DIVE INTO CODE　2018年８月期　K.Sato</p>
+  </footer>
+  </div>
+</body>
 </html>

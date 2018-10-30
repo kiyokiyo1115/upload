@@ -1,5 +1,24 @@
-<h1>ブログ投稿確認</h1>
-<p>タイトル: <%= @blog.title %></p>
-<p>内容: <%= @blog.content %></p>
+<div class="container-fluid">
+  <h1>ブログ投稿確認</h1>
+  <div><%= image_tag "umi.jpg" %></div>
+  <div class="row">
+    <div class="nav nav-sidebar col-md-3 col-xs-12">
+      <ul id="list"></ul>
+            <li class="active"><a href=""/"">ホーム</a></li>
+            <li><a href="/blogs/new">新規作成</a></li>
+            <li><a href="/blogs">ブログ一覧</a></li>
+        </ul>
+    </div>
 
-<%= link_to '新しくブログを投稿する', new_blog_path %>
+    <div class="col-md-9 col-xs-12">
+      
+        <p>タイトル: <%= @blog.title %></p>
+        <p>内容: <%= @blog.content %></p><br><br>
+        <a href="/blogs" class="btn btn-default btn-sm" role="button">ブログ一覧へ</a>
+    </div>
+  
+
+
+
+  </div>
+</div>
