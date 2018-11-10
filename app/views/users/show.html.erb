@@ -7,13 +7,11 @@
   <th>内容</th>
   <th>投稿者</th>
 </tr>
-    <% if @favorites.present? %>
-    <% @favorites_blogs.each do |blog| %>
-        <tr>
-        <td><%= blog.title %></td>
-        <td><%= blog.content %></td>
-        <td><%= blog.user.name %></td>
-       </tr>
-    <% end %>
-    <% end %>
-    </table>
+  <% @user.favorite_blogs.each do |blog| %>
+    <tr>
+      <td><%= blog.title %></td>
+      <td><%= blog.content %></td>
+      <td><%= blog.user.name %></td>
+    </tr>
+  <% end %>
+</table>

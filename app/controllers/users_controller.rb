@@ -14,9 +14,7 @@ end
 
 def show
     @user = User.find(params[:id])
-    if @favorites.present?
-    @favorites_blogs = @current_user.favorites
-    end
+    @favorites_blogs = @user.favorites
 end
 
 private

@@ -1,6 +1,7 @@
 class BlogsController < ApplicationController
    before_action :set_blog, only: [:show, :edit, :update, :destroy]
    before_action :require_logged_in!, only: [:new, :show, :edit, :update, :destroy]
+   before_action :edit_blog, only: [:edit, :destroy]
   
   def index
     @blogs = Blog.all
@@ -54,6 +55,12 @@ class BlogsController < ApplicationController
     end
   end
 
+  def edit_blog
+    unless @blog.user_id == current_user.id  
+      redirect_to blogs_path, notice: "投稿者以外はブログを編集できません！！"
+    end
+  end
+
   private
 
   def blog_params
@@ -63,4 +70,5 @@ class BlogsController < ApplicationController
   def set_blog
     @blog = Blog.find(params[:id])
   end
+  
 end
