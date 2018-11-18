@@ -2,6 +2,6 @@ class BlogMailer < ApplicationMailer
     def blog_mail(blog)
      @blog = blog
     
-     mail to: "自分のメールアドレス", subject: "お問い合わせの確認メール"
+     mail to: "kiyotaka_1115@yahoo.co.jp", subject: "ブログ作成完了メール"
     end
 end
