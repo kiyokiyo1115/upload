@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :feeds
   root to: 'tops#index'
 
   resources :blogs do
