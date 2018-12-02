@@ -10,3 +10,8 @@ class FavoritesController < ApplicationController
       redirect_to blogs_url, notice: "#{favorite.blog.user.name}さんのブログをお気に入り解除しました"
     end
   end
+  
+private
+  def fevorites_params
+    params.require(:fevorite).permit(:image, :image_cache)
+  end
