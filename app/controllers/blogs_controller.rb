@@ -44,8 +44,6 @@ class BlogsController < ApplicationController
 
   def confirm
     @blog = current_user.blogs.build(blog_params)
-   
-
     render :new if @blog.invalid?
   end
   
@@ -66,7 +64,7 @@ class BlogsController < ApplicationController
   private
 
   def blog_params
-    params.require(:blog).permit(:title, :content, :blog_image, :image_cache)
+    params.require(:blog).permit(:title, :content, :image, :image_cache)
   end
   
   def set_blog
