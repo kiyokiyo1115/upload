@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <h1>ブログ投稿確認</h1>
-  <div><%= image_tag "umi.jpg" %></div>
+  
   
     
   <div class="row">
@@ -15,8 +15,13 @@
     <div class="col-md-9 col-xs-12">  
         <p>タイトル: <%= @blog.title %></p>
         <p>内容: <%= @blog.content %></p>
+     
       <% if @blog.image.url.present? %>
-        <p>画像：<%= image_tag @blog.image.url %></p><br><br>
+        
+        <p>画像：</p>
+        <div class= "image">
+        <%= image_tag @blog.image.url %></p><br><br>
+      </div>
       <% end %>
       <div class= "button">
         <a href="/blogs" class="btn btn-default btn-sm" role="button">ブログ一覧へ</a>
