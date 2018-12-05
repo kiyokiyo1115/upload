@@ -19,17 +19,17 @@
       <% if @blog.image.url.present? %>
         
         <p>画像：</p>
-        <div class= "image">
+        <div class= "image col-md-12 col-xs-12">
         <%= image_tag @blog.image.url %></p><br><br>
       </div>
       <% end %>
-      <div class= "button">
+      <div class= "button col-md-12 col-xs-12">
         <a href="/blogs" class="btn btn-default btn-sm" role="button">ブログ一覧へ</a>
       </div>
     </div>
   </div>
   <% unless @blog.user_id == current_user.id %>
-    <div class= "button">  
+    <div class= "button col-md-12 col-xs-12">  
       <% if @favorite.present? %>
         <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
       <% else %>
