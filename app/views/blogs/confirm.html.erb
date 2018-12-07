@@ -7,12 +7,12 @@
   <p>タイトル:<%= @blog.title %></p>
   <p>本文:<%= @blog.content %></p>
 <% if @blog.image.url.present? %>
-  <p>画像:</p>
-<div class= "image col-md-12 col-xs-12">
+  <p>画像</p>
+ <div class= "button ">
   <%= image_tag(@blog.image.url) %>
-</div>  
-<% end %>
-  <%= form.hidden_field :image_cache %>
+  <% end %>
+ <%= form.hidden_field :image_cache %>
+  </div> 
   <div class= "button col-md-12 col-xs-12">
   <%= form.submit  "登録する" %>
   </div>
